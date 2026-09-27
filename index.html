@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* === ПОДКЛЮЧЕНИЕ FELIDAE === */
+/* ====== ПОДКЛЮЧЕНИЕ FELIDAE ====== */
 @font-face {
   font-family: 'Felidae';
   src: url('fonts/Felidae-Regular.ttf') format('truetype');
@@ -18,7 +18,7 @@
   font-style: normal;
   font-display: swap;
 }
-/* Если есть жирное начертание Felidae — положите файл рядом и раскомментируйте:
+/* Если есть жирное начертание — раскомментируйте:
 @font-face {
   font-family: 'Felidae';
   src: url('fonts/Felidae-Bold.ttf') format('truetype');
@@ -39,8 +39,10 @@
   --sans:'Montserrat',Arial,sans-serif;
   --serif:'Felidae',Georgia,serif;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
   background:var(--off);
   color:var(--black);
@@ -51,20 +53,22 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
+
 img{max-width:100%;display:block}
 section{padding:100px 24px;text-align:center}
 .container{max-width:880px;margin:0 auto}
 
-/* === ТОЛЬКО ЗАГОЛОВКИ — Felidae, жирные === */
+/* ====== ЗАГОЛОВКИ (Felidae, жирные) ====== */
 h1, h2, h3,
 .hero-title,
 .date-big,
 .f-title,
 .cal-head,
 .p-item .time,
-.place-card h3 {
-  font-family: var(--serif);
-  font-weight: 700;
+.place-card h3,
+.invite-text .hello{
+  font-family:var(--serif);
+  font-weight:700;
 }
 
 h2{
@@ -73,6 +77,7 @@ h2{
   text-transform:uppercase;
   line-height:1.3;
 }
+
 .h-decor{position:relative;display:inline-block;padding:0 12px}
 .h-decor::before,.h-decor::after{
   content:"";
@@ -86,27 +91,6 @@ h2{
 .h-decor::before{left:-56px}
 .h-decor::after{right:-56px}
 
-/* Всё, что НЕ заголовок — Montserrat */
-.sub,
-.invite-text,
-.cal-grid,
-.cal-grid span,
-.timer,
-.timer .num,
-.timer .lbl,
-.p-item p,
-.field,
-.field label,
-.field input,
-.radio-row,
-.btn,
-.btn-send,
-.form-msg,
-footer p,
-.cover p {
-  font-family: var(--sans);
-}
-
 .sub{
   color:#4d4d4d;
   max-width:620px;
@@ -116,7 +100,7 @@ footer p,
   letter-spacing:.02em;
 }
 
-/* ---------- COVER ---------- */
+/* ====== ОБЛОЖКА ====== */
 .cover{
   position:fixed;inset:0;
   background:var(--brown);
@@ -146,7 +130,7 @@ footer p,
 }
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 
-/* ---------- HERO ---------- */
+/* ====== ГЛАВНЫЙ ЭКРАН ====== */
 .hero{
   min-height:100vh;
   position:relative;
@@ -177,7 +161,7 @@ footer p,
 }
 .hero-title b{font-weight:700;font-style:normal}
 
-/* Таймер — компактнее */
+/* ====== ТАЙМЕР (компактный) ====== */
 .timer{
   display:flex;
   gap:clamp(10px,2.5vw,22px);
@@ -210,7 +194,7 @@ footer p,
   font-weight:400;
 }
 
-/* ---------- INVITE ---------- */
+/* ====== ПРИГЛАШЕНИЕ ====== */
 .invite-text{
   max-width:640px;
   margin:30px auto 0;
@@ -220,8 +204,6 @@ footer p,
 .invite-text p{margin-bottom:12px}
 .invite-text .hello{
   display:block;
-  font-family:var(--serif);
-  font-weight:700;
   font-size:clamp(22px,4vw,28px);
   letter-spacing:.06em;
   margin-bottom:16px;
@@ -233,6 +215,8 @@ footer p,
   margin:44px 0 30px;
   letter-spacing:.08em;
 }
+
+/* ====== КАЛЕНДАРЬ ====== */
 .calendar{
   max-width:400px;
   margin:0 auto;
@@ -246,7 +230,6 @@ footer p,
   letter-spacing:.3em;
   text-transform:uppercase;
   margin-bottom:18px;
-  font-weight:700;
 }
 .cal-grid{
   display:grid;
@@ -281,18 +264,15 @@ footer p,
 }
 .cal-grid .heart i{transform:rotate(45deg);font-style:normal;display:block}
 
-/* ---------- PROGRAM ---------- */
+/* ====== ПРОГРАММА ====== */
 .program{background:var(--white)}
 .p-item{max-width:500px;margin:48px auto 0}
 .p-item .time{
   font-size:26px;
-  font-weight:700;
   letter-spacing:.1em;
 }
 .p-item h3{
-  font-family:var(--serif);
   font-size:20px;
-  font-weight:700;
   margin:8px 0 10px;
   letter-spacing:.08em;
 }
@@ -312,7 +292,7 @@ footer p,
 }
 .p-icon svg{width:38px;height:38px}
 
-/* ---------- GALLERY ---------- */
+/* ====== ГАЛЕРЕЯ ====== */
 .g-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -333,7 +313,7 @@ footer p,
   .g-grid .ph:first-child{grid-column:1/-1;max-height:520px}
 }
 
-/* ---------- PLACE ---------- */
+/* ====== МЕСТО ====== */
 .place{background:var(--white)}
 .map-frame{
   width:100%;max-width:720px;height:360px;
@@ -342,9 +322,7 @@ footer p,
 }
 .place-card{margin-top:30px}
 .place-card h3{
-  font-family:var(--serif);
   font-size:26px;
-  font-weight:700;
   letter-spacing:.08em;
 }
 .place-card .addr{
@@ -372,7 +350,7 @@ footer p,
 }
 .btn:hover{background:transparent;color:var(--black)}
 
-/* ---------- DRESS CODE ---------- */
+/* ====== DRESS CODE ====== */
 .dc-frame{
   max-width:660px;
   margin:40px auto 0;
@@ -383,10 +361,11 @@ footer p,
 .dc-frame h2{margin-bottom:20px}
 .dc-frame p{font-family:var(--sans);font-size:16px;line-height:1.6;color:#4d4d4d}
 
-/* ---------- RSVP ---------- */
+/* ====== АНКЕТА ====== */
 .rsvp{background:var(--brown);color:#f3ede3}
 .rsvp .h-decor::before,.rsvp .h-decor::after{background:#f3ede3}
 .rsvp .sub{color:#c9c1b3}
+
 form{max-width:580px;margin:40px auto 0;text-align:left}
 .field{margin-bottom:28px}
 .field>label{
@@ -411,6 +390,7 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   color:var(--black);
 }
 .field input[type=text]:focus{border-color:var(--black)}
+
 .radio-row{
   font-family:var(--sans);
   display:flex;align-items:center;gap:14px;
@@ -435,6 +415,7 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   border-radius:50%;
 }
 .radio-row input:checked~.txt{color:var(--white)}
+
 .submit-wrap{text-align:center;margin-top:10px}
 .btn-send{
   width:100%;
@@ -451,6 +432,7 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   transition:.3s;
 }
 .btn-send:hover{background:var(--red);color:var(--white)}
+
 .form-msg{
   font-family:var(--sans);
   text-align:center;
@@ -462,7 +444,7 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
 .form-msg.ok{color:#9fd8ae}
 .form-msg.err{color:#f0a0a0}
 
-/* ---------- FOOTER ---------- */
+/* ====== ФУТЕР ====== */
 footer{
   background:var(--black);
   color:var(--white);
@@ -483,9 +465,7 @@ footer .ph-hero::before{
 }
 footer .ph-hero>*{position:relative;z-index:1}
 footer .f-title{
-  font-family:var(--serif);
   font-size:clamp(24px,5vw,36px);
-  font-weight:700;
   letter-spacing:.14em;
   text-transform:uppercase;
   text-shadow:0 2px 18px rgba(0,0,0,.6);
@@ -516,7 +496,7 @@ footer p{
   line-height:1.6;
 }
 
-/* ---------- ANIMATION ---------- */
+/* ====== АНИМАЦИЯ ====== */
 .reveal{
   opacity:0;
   transform:translateY(26px);
@@ -524,7 +504,7 @@ footer p{
 }
 .reveal.visible{opacity:1;transform:none}
 
-/* ---------- MOBILE ---------- */
+/* ====== МОБИЛЬНЫЕ ====== */
 @media(max-width:520px){
   section{padding:70px 16px}
   .timer .unit{width:66px;height:66px}
@@ -540,7 +520,7 @@ footer p{
 </head>
 <body>
 
-<!-- Обложка -->
+<!-- ====== ОБЛОЖКА ====== -->
 <div class="cover" id="cover" role="button" aria-label="Открыть приглашение">
   <p>Нажмите, чтобы открыть<br>приглашение</p>
   <div class="heart-wrap">
@@ -550,7 +530,7 @@ footer p{
   </div>
 </div>
 
-<!-- Главный экран -->
+<!-- ====== ГЛАВНЫЙ ЭКРАН ====== -->
 <header class="hero">
   <img class="logo" src="logo.jpg" alt="Nazan Dance" onerror="this.style.display='none'">
   <h1 class="hero-title">В ритме <b>единства</b></h1>
@@ -562,13 +542,13 @@ footer p{
   </div>
 </header>
 
-<!-- Приглашение -->
+<!-- ====== ПРИГЛАШЕНИЕ ====== -->
 <section class="reveal">
   <div class="container">
     <h2><span class="h-decor">Дорогие друзья,<br>родные и близкие!</span></h2>
     <div class="invite-text">
       <p>В наше время особенно важно чувствовать плечо друг друга и помнить о корнях. Приглашаем вас на концерт <b>«В ритме единства»</b>, который объединит всех, кто ценит единство и искренне любит свою страну.</p>
-      <p style="margin-top:12px">Мы — единое целое, и это стоит отметить вместе! Давайте разделим чувство гордости за нашу Родину и силу нашего единства.</p>
+      <p>Мы — единое целое, и это стоит отметить вместе! Давайте разделим чувство гордости за нашу Родину и силу нашего единства.</p>
     </div>
     <p class="date-big">31 октября 2026 года</p>
     <div class="calendar">
@@ -587,7 +567,7 @@ footer p{
   </div>
 </section>
 
-<!-- Программа -->
+<!-- ====== ПРОГРАММА ====== -->
 <section class="program reveal">
   <div class="container">
     <h2><span class="h-decor">Программа дня</span></h2>
@@ -610,7 +590,7 @@ footer p{
   </div>
 </section>
 
-<!-- Галерея -->
+<!-- ====== ГАЛЕРЕЯ ====== -->
 <section class="reveal">
   <div class="container">
     <h2><span class="h-decor">Наши моменты</span></h2>
@@ -623,7 +603,7 @@ footer p{
   </div>
 </section>
 
-<!-- Место проведения -->
+<!-- ====== МЕСТО ====== -->
 <section class="place reveal">
   <div class="container">
     <h2><span class="h-decor">Место проведения</span></h2>
@@ -635,7 +615,7 @@ footer p{
   </div>
 </section>
 
-<!-- Дресс-код -->
+<!-- ====== DRESS CODE ====== -->
 <section class="reveal">
   <div class="container">
     <div class="dc-frame">
@@ -645,7 +625,7 @@ footer p{
   </div>
 </section>
 
-<!-- Анкета гостя -->
+<!-- ====== АНКЕТА ====== -->
 <section class="rsvp reveal" id="rsvp">
   <div class="container">
     <h2><span class="h-decor">Анкета гостя</span></h2>
@@ -676,6 +656,7 @@ footer p{
   </div>
 </section>
 
+<!-- ====== ФУТЕР ====== -->
 <footer>
   <div class="container">
     <div class="ph-hero">
@@ -690,9 +671,11 @@ footer p{
 <script>
 const GOOGLE_SCRIPT_URL = "ВСТАВЬТЕ_URL_ВАШЕГО_APPS_SCRIPT";
 
+/* Обложка */
 const cover = document.getElementById('cover');
 cover.addEventListener('click', () => cover.classList.add('hidden'));
 
+/* Обратный отсчёт до 31.10.2026 18:00 (МСК) */
 const target = new Date('2026-10-31T18:00:00+03:00').getTime();
 const dEl = document.getElementById('d');
 const hEl = document.getElementById('h');
@@ -710,17 +693,24 @@ function tick(){
 tick();
 setInterval(tick, 1000);
 
-const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.1});
+/* Плавное появление секций */
+const io = new IntersectionObserver(
+  es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+  {threshold:.1}
+);
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+/* Отправка анкеты */
 const form = document.getElementById('rsvpForm');
 const msg = document.getElementById('formMsg');
 const btn = document.getElementById('submitBtn');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  msg.className = 'form-msg'; msg.textContent = '';
-  btn.disabled = true; btn.textContent = 'Отправка…';
+  msg.className = 'form-msg';
+  msg.textContent = '';
+  btn.disabled = true;
+  btn.textContent = 'Отправка…';
 
   const data = {
     surname: document.getElementById('surname').value.trim(),
@@ -731,14 +721,16 @@ form.addEventListener('submit', async (e) => {
 
   if (GOOGLE_SCRIPT_URL.startsWith('ВСТАВЬТЕ')) {
     msg.className = 'form-msg err';
-    msg.textContent = 'Форма ещё не подключена: вставьте URL Apps Script (см. README).';
-    btn.disabled = false; btn.textContent = 'Отправить!';
+    msg.textContent = 'Форма ещё не подключена: вставьте URL Apps Script.';
+    btn.disabled = false;
+    btn.textContent = 'Отправить!';
     return;
   }
 
   try {
     await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
+      method: 'POST',
+      mode: 'no-cors',
       headers: {'Content-Type':'text/plain;charset=utf-8'},
       body: JSON.stringify(data)
     });
@@ -749,7 +741,8 @@ form.addEventListener('submit', async (e) => {
     msg.className = 'form-msg err';
     msg.textContent = 'Ошибка отправки. Попробуйте ещё раз.';
   }
-  btn.disabled = false; btn.textContent = 'Отправить!';
+  btn.disabled = false;
+  btn.textContent = 'Отправить!';
 });
 </script>
 </body>
