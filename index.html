@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>В ритме единства — 31 октября 2026</title>
 <meta name="description" content="Приглашение на концерт «В ритме единства» — 31 октября 2026, ДК «Яуза», Мытищи">
-<link rel="icon" href="logo.jpg">
+<link rel="icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@ body{
   color:var(--black);
   font-family:var(--sans);
   font-weight:300;
-  line-height:1.55;
+  line-height:1.75;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -46,15 +46,14 @@ img{max-width:100%;display:block}
 section{padding:100px 24px;text-align:center}
 .container{max-width:880px;margin:0 auto}
 
-/* === ТОЛЬКО ЗАГОЛОВКИ — Felidae === */
+/* === ТОЛЬКО ЗАГОЛОВКИ — Felidae (вес 400) === */
 h1, h2, h3,
 .hero-title,
 .date-big,
 .f-title,
 .cal-head,
 .p-item .time,
-.place-card h3,
-.invite-text .hello {
+.place-card h3 {
   font-family: var(--serif);
   font-weight: 400;
 }
@@ -104,7 +103,7 @@ footer p,
   max-width:620px;
   margin:20px auto 0;
   font-size:16px;
-  line-height:1.6;
+  line-height:1.8;
   letter-spacing:.02em;
 }
 
@@ -123,7 +122,7 @@ footer p,
   color:#efe9df;
   font-size:14px;
   letter-spacing:.18em;
-  line-height:1.8;
+  line-height:2;
   text-transform:uppercase;
   font-weight:400;
   text-align:center;
@@ -142,10 +141,10 @@ footer p,
 .hero{
   min-height:100vh;
   position:relative;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
   padding:40px 20px 70px;
   color:var(--white);
-  background:url('photo1.jpg') center/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
+  background:url('images/photo1.jpg') center/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
 }
 .hero::before{
   content:"";
@@ -155,7 +154,7 @@ footer p,
 .hero>*{position:relative;z-index:1}
 .hero .logo{
   width:110px;border-radius:50%;
-  margin-bottom:26px;
+  margin-bottom:24px;
   border:2px solid rgba(255,255,255,.7);
   box-shadow:0 8px 30px rgba(0,0,0,.3);
 }
@@ -168,18 +167,25 @@ footer p,
   line-height:1.3;
 }
 .hero-title b{font-weight:400;font-style:normal}
-
-/* Таймер — компактный */
+.hero .date{
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:.38em;
+  text-transform:uppercase;
+  color:#e9e2d6;
+  font-family:var(--sans);
+  font-weight:400;
+}
 .timer{
   display:flex;
-  gap:clamp(10px,2.5vw,22px);
+  gap:clamp(16px,4vw,38px);
   margin-top:44px;
   flex-wrap:wrap;
   justify-content:center;
 }
 .timer .unit{
-  width:78px;height:78px;
-  border:1px solid rgba(255,255,255,.7);
+  width:104px;height:104px;
+  border:1px solid rgba(255,255,255,.75);
   border-radius:50%;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   background:rgba(0,0,0,.25);
@@ -187,18 +193,18 @@ footer p,
 }
 .timer .num{
   font-family:var(--sans);
-  font-size:22px;
+  font-size:32px;
   font-weight:400;
   line-height:1;
-  letter-spacing:.03em;
+  letter-spacing:.04em;
 }
 .timer .lbl{
   font-family:var(--sans);
-  font-size:8px;
-  letter-spacing:.24em;
+  font-size:9px;
+  letter-spacing:.3em;
   text-transform:uppercase;
   color:#d9d2c6;
-  margin-top:3px;
+  margin-top:4px;
   font-weight:400;
 }
 
@@ -207,22 +213,22 @@ footer p,
   max-width:640px;
   margin:30px auto 0;
   font-size:17px;
-  line-height:1.65;
+  line-height:1.9;
 }
-.invite-text p{margin-bottom:12px}
+.invite-text p{margin-bottom:14px}
 .invite-text .hello{
   display:block;
   font-family:var(--serif);
   font-weight:400;
   font-size:clamp(22px,4vw,28px);
   letter-spacing:.06em;
-  margin-bottom:16px;
-  line-height:1.35;
+  margin-bottom:18px;
+  line-height:1.4;
 }
 .date-big{
   font-size:clamp(26px,5vw,36px);
   font-weight:400;
-  margin:44px 0 30px;
+  margin:48px 0 32px;
   letter-spacing:.08em;
 }
 .calendar{
@@ -292,7 +298,7 @@ footer p,
   font-family:var(--sans);
   color:#4d4d4d;
   font-size:15px;
-  line-height:1.6;
+  line-height:1.8;
 }
 .p-icon{
   width:96px;height:96px;
@@ -344,7 +350,7 @@ footer p,
   color:#4d4d4d;
   margin:8px 0 24px;
   font-size:16px;
-  line-height:1.6;
+  line-height:1.8;
 }
 .btn{
   display:inline-block;
@@ -373,7 +379,7 @@ footer p,
   background:var(--white);
 }
 .dc-frame h2{margin-bottom:20px}
-.dc-frame p{font-family:var(--sans);font-size:16px;line-height:1.6;color:#4d4d4d}
+.dc-frame p{font-family:var(--sans);font-size:16px;line-height:1.8;color:#4d4d4d}
 
 /* ---------- RSVP ---------- */
 .rsvp{background:var(--brown);color:#f3ede3}
@@ -388,7 +394,6 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   font-weight:400;
   margin-bottom:12px;
   letter-spacing:.04em;
-  line-height:1.5;
 }
 .field input[type=text]{
   width:100%;
@@ -409,7 +414,7 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   margin-bottom:14px;
   cursor:pointer;
   font-size:16px;
-  line-height:1.45;
+  line-height:1.5;
 }
 .radio-row input{position:absolute;opacity:0}
 .radio-row .dot{
@@ -449,7 +454,7 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   margin-top:20px;
   font-size:15px;
   min-height:24px;
-  line-height:1.5;
+  line-height:1.6;
 }
 .form-msg.ok{color:#9fd8ae}
 .form-msg.err{color:#f0a0a0}
@@ -462,7 +467,7 @@ footer{
   text-align:center;
 }
 footer .ph-hero{
-  background:url('photo5.jpg') center 30%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
+  background:url('images/photo5.jpg') center 30%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
   height:280px;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   gap:12px;
@@ -505,7 +510,7 @@ footer p{
   text-transform:uppercase;
   color:#9a938a;
   font-weight:400;
-  line-height:1.6;
+  line-height:1.8;
 }
 
 /* ---------- ANIMATION ---------- */
@@ -519,9 +524,8 @@ footer p{
 /* ---------- MOBILE ---------- */
 @media(max-width:520px){
   section{padding:70px 16px}
-  .timer .unit{width:66px;height:66px}
-  .timer .num{font-size:19px}
-  .timer .lbl{font-size:7px;letter-spacing:.2em}
+  .timer .unit{width:86px;height:86px}
+  .timer .num{font-size:26px}
   .h-decor::before,.h-decor::after{display:none}
   .calendar{padding:20px 22px}
   .dc-frame{padding:36px 22px}
@@ -544,8 +548,9 @@ footer p{
 
 <!-- Главный экран -->
 <header class="hero">
-  <img class="logo" src="logo.jpg" alt="Nazan Dance" onerror="this.style.display='none'">
+  <img class="logo" src="images/logo.jpg" alt="Nazan Dance" onerror="this.style.display='none'">
   <h1 class="hero-title">В ритме <b>единства</b></h1>
+  <p class="date">Суббота • 31 октября 2026</p>
   <div class="timer">
     <div class="unit"><div class="num" id="d">00</div><div class="lbl">дней</div></div>
     <div class="unit"><div class="num" id="h">00</div><div class="lbl">часов</div></div>
@@ -560,7 +565,7 @@ footer p{
     <h2><span class="h-decor">Дорогие друзья,<br>родные и близкие!</span></h2>
     <div class="invite-text">
       <p>В наше время особенно важно чувствовать плечо друг друга и помнить о корнях. Приглашаем вас на концерт <b>«В ритме единства»</b>, который объединит всех, кто ценит единство и искренне любит свою страну.</p>
-      <p>Мы — единое целое, и это стоит отметить вместе! Давайте разделим чувство гордости за нашу Родину и силу нашего единства.</p>
+      <p style="margin-top:12px">Мы — единое целое, и это стоит отметить вместе! Давайте разделим чувство гордости за нашу Родину и силу нашего единства.</p>
     </div>
     <p class="date-big">31 октября 2026 года</p>
     <div class="calendar">
@@ -607,10 +612,10 @@ footer p{
   <div class="container">
     <h2><span class="h-decor">Наши моменты</span></h2>
     <div class="g-grid">
-      <div class="ph"><img src="photo2.jpg" alt="Выступление" loading="lazy" onerror="this.style.display='none'"></div>
-      <div class="ph"><img src="photo3.jpg" alt="На сцене" loading="lazy" onerror="this.style.display='none'"></div>
-      <div class="ph"><img src="photo4.jpg" alt="Праздник" loading="lazy" onerror="this.style.display='none'"></div>
-      <div class="ph"><img src="photo5.jpg" alt="Пара" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph"><img src="images/photo2.jpg" alt="Выступление" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph"><img src="images/photo3.jpg" alt="На сцене" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph"><img src="images/photo4.jpg" alt="Праздник" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph"><img src="images/photo5.jpg" alt="Пара" loading="lazy" onerror="this.style.display='none'"></div>
     </div>
   </div>
 </section>
@@ -674,7 +679,7 @@ footer p{
       <div class="f-title">Будем рады<br>видеть вас!</div>
       <div class="f-names">В ритме единства</div>
     </div>
-    <img class="logo" src="logo.jpg" alt="Nazan Dance" onerror="this.style.display='none'">
+    <img class="logo" src="images/logo.jpg" alt="Nazan Dance" onerror="this.style.display='none'">
     <p>31 октября 2026 • ДК «Яуза» • Мытищи</p>
   </div>
 </footer>
