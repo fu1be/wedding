@@ -629,7 +629,7 @@ form.addEventListener('submit', async (e) => {
   params.append('attend', form.querySelector('input[name="attend"]:checked').value);
   params.append('with', document.getElementById('with').value.trim());
 
-  if (GOOGLE_SCRIPT_URL.startsWith('ВСТАВЬТЕ')) {
+  if (GOOGLE_SCRIPT_URL.startsWith('https://script.google.com/macros/s/AKfycbxT2NnO8WFJ4uVCBak9qzxnLcyre4sXy0o3L5IoB-VrWPUOSNiWqBplDqzV2L94lTs2hg/exec')) {
     msg.className = 'form-msg err';
     msg.textContent = 'Форма ещё не подключена: вставьте URL Apps Script.';
     btn.disabled = false;
