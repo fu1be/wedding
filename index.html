@@ -323,16 +323,13 @@ footer p,
 }
 .g-grid .ph:hover img{transform:scale(1.04)}
 
-/* Фото 1 — горизонтальное (на всю ширину) */
 .g-grid .ph-wide{
   grid-column:1/-1;
   height:320px;
 }
-/* Фото 2 и 3 — квадратные */
 .g-grid .ph-square{
   height:280px;
 }
-/* Фото 4 — горизонтальное, но с уменьшенной высотой */
 .g-grid .ph-wide-low{
   grid-column:1/-1;
   height:220px;
@@ -508,16 +505,17 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
 footer{
   background:var(--black);
   color:var(--white);
-  padding:0 0 70px;
   text-align:center;
+  margin:0;
+  padding:0;
 }
 footer .ph-hero{
   background:url('images/photo5.jpg') center 30%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
-  height:620px;
+  min-height:100vh;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   gap:16px;
   position:relative;
-  margin-bottom:50px;
+  padding:60px 20px;
 }
 footer .ph-hero::before{
   content:"";
@@ -543,13 +541,14 @@ footer .f-names{
   text-shadow:0 2px 12px rgba(0,0,0,.6);
   font-weight:400;
 }
-footer .logo{
-  width:140px;
-  margin:20px auto 0;
-  filter:drop-shadow(0 4px 18px rgba(0,0,0,.5));
-}
-footer .foot-bottom{
-  padding:0 20px;
+footer .f-logo{
+  position:absolute;
+  bottom:50px;
+  left:50%;
+  transform:translateX(-50%);
+  width:160px;
+  z-index:2;
+  filter:drop-shadow(0 4px 20px rgba(0,0,0,.6));
 }
 
 /* ---------- ANIMATION ---------- */
@@ -570,8 +569,7 @@ footer .foot-bottom{
   .dc-frame{padding:36px 22px}
   .btn{padding:14px 28px;font-size:10px}
   .hero .logo{width:130px}
-  footer .ph-hero{height:420px}
-  footer .logo{width:110px}
+  footer .f-logo{width:110px;bottom:36px}
 }
 </style>
 <base target="_blank">
@@ -728,9 +726,7 @@ footer .foot-bottom{
   <div class="ph-hero">
     <div class="f-title">Будем рады<br>видеть вас!</div>
     <div class="f-names">В ритме единства</div>
-  </div>
-  <div class="foot-bottom">
-    <img class="logo" src="images/logo.png" alt="Nazan Dance" onerror="this.style.display='none'">
+    <img class="f-logo" src="images/logo.png" alt="Nazan Dance" onerror="this.style.display='none'">
   </div>
 </footer>
 
@@ -800,4 +796,4 @@ form.addEventListener('submit', async (e) => {
 });
 </script>
 </body>
-</html>а
+</html>
