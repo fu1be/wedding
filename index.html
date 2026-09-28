@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>В ритме единства — 31 октября 2026</title>
 <meta name="description" content="Приглашение на концерт «В ритме единства» — 31 октября 2026, ДК «Яуза», Мытищи">
-<link rel="icon" href="images/logo.jpg">
+<link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* === ПОДКЛЮЧЕНИЕ MAK (OTF) === */
 @font-face {
-  font-family: 'Mak';
+  font-family: 'MAK';
   src: url('fonts/MAK.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
@@ -28,7 +28,7 @@
   --grey:#7d7d7d;
   --line:#e3ded6;
   --sans:'Montserrat',Arial,sans-serif;
-  --serif:'Mak',Georgia,serif;
+  --serif:'MAK',Georgia,serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -46,7 +46,7 @@ img{max-width:100%;display:block}
 section{padding:100px 24px;text-align:center}
 .container{max-width:880px;margin:0 auto}
 
-/* === ТОЛЬКО ЗАГОЛОВКИ — Mak (вес 400) === */
+/* === ТОЛЬКО ЗАГОЛОВКИ — MAK (вес 400) === */
 h1, h2, h3,
 .hero-title,
 .date-big,
@@ -154,14 +154,13 @@ footer p,
 .hero>*{position:relative;z-index:1}
 .hero-top{
   display:flex;flex-direction:column;align-items:center;
-  flex:1;justify-content:center;
-  padding-top:20px;
+  flex:1;justify-content:flex-end;
+  padding-bottom:40px;
 }
 .hero .logo{
-  width:110px;border-radius:50%;
-  margin-bottom:24px;
-  border:2px solid rgba(255,255,255,.7);
-  box-shadow:0 8px 30px rgba(0,0,0,.3);
+  width:180px;
+  margin-bottom:28px;
+  filter:drop-shadow(0 8px 30px rgba(0,0,0,.5));
 }
 .hero-title{
   font-weight:400;
@@ -324,17 +323,25 @@ footer p,
 }
 .g-grid .ph:hover img{transform:scale(1.04)}
 
+/* Фото 1 — горизонтальное (на всю ширину) */
 .g-grid .ph-wide{
   grid-column:1/-1;
   height:320px;
 }
+/* Фото 2 и 3 — квадратные */
 .g-grid .ph-square{
   height:280px;
+}
+/* Фото 4 — горизонтальное, но с уменьшенной высотой */
+.g-grid .ph-wide-low{
+  grid-column:1/-1;
+  height:220px;
 }
 
 @media(min-width:760px){
   .g-grid .ph-wide{height:420px}
   .g-grid .ph-square{height:320px}
+  .g-grid .ph-wide-low{height:280px}
 }
 
 /* ---------- PLACE ---------- */
@@ -501,15 +508,16 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
 footer{
   background:var(--black);
   color:var(--white);
-  padding:90px 20px 70px;
+  padding:0 0 70px;
   text-align:center;
 }
 footer .ph-hero{
   background:url('images/photo5.jpg') center 30%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
-  height:280px;
+  height:620px;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
-  gap:12px;
+  gap:16px;
   position:relative;
+  margin-bottom:50px;
 }
 footer .ph-hero::before{
   content:"";
@@ -519,7 +527,7 @@ footer .ph-hero::before{
 footer .ph-hero>*{position:relative;z-index:1}
 footer .f-title{
   font-family:var(--serif);
-  font-size:clamp(28px,5.5vw,42px);
+  font-size:clamp(34px,6.5vw,54px);
   font-weight:400;
   letter-spacing:.12em;
   text-transform:uppercase;
@@ -536,19 +544,12 @@ footer .f-names{
   font-weight:400;
 }
 footer .logo{
-  width:96px;
-  border-radius:50%;
-  margin:38px auto 16px;
-  border:2px solid rgba(255,255,255,.5);
+  width:140px;
+  margin:20px auto 0;
+  filter:drop-shadow(0 4px 18px rgba(0,0,0,.5));
 }
-footer p{
-  font-family:var(--sans);
-  font-size:11px;
-  letter-spacing:.3em;
-  text-transform:uppercase;
-  color:#9a938a;
-  font-weight:400;
-  line-height:1.8;
+footer .foot-bottom{
+  padding:0 20px;
 }
 
 /* ---------- ANIMATION ---------- */
@@ -568,6 +569,9 @@ footer p{
   .calendar{padding:20px 22px}
   .dc-frame{padding:36px 22px}
   .btn{padding:14px 28px;font-size:10px}
+  .hero .logo{width:130px}
+  footer .ph-hero{height:420px}
+  footer .logo{width:110px}
 }
 </style>
 <base target="_blank">
@@ -587,7 +591,7 @@ footer p{
 <!-- Главный экран -->
 <header class="hero">
   <div class="hero-top">
-    <img class="logo" src="images/logo.jpg" alt="Nazan Dance" onerror="this.style.display='none'">
+    <img class="logo" src="images/logo.png" alt="Nazan Dance" onerror="this.style.display='none'">
     <h1 class="hero-title">В ритме <b>единства</b></h1>
   </div>
   <div class="timer">
@@ -654,7 +658,7 @@ footer p{
       <div class="ph ph-wide"><img src="images/photo2.jpg" alt="Выступление" loading="lazy" onerror="this.style.display='none'"></div>
       <div class="ph ph-square"><img src="images/photo3.jpg" alt="На сцене" loading="lazy" onerror="this.style.display='none'"></div>
       <div class="ph ph-square"><img src="images/photo4.jpg" alt="Праздник" loading="lazy" onerror="this.style.display='none'"></div>
-      <div class="ph ph-wide"><img src="images/photo5.jpg" alt="Пара" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="ph ph-wide-low"><img src="images/photo5.jpg" alt="Пара" loading="lazy" onerror="this.style.display='none'"></div>
     </div>
   </div>
 </section>
@@ -685,7 +689,7 @@ footer p{
 <section class="rsvp reveal" id="rsvp">
   <div class="container">
     <h2><span class="h-decor">Анкета гостя</span></h2>
-    <p class="sub">Пожалуйста, заполните анкету<br>до 20 октября 2026</p>
+    <p class="sub">Пожалуйста, заполните анкету<br>до 30 октября 2026</p>
     <form id="rsvpForm">
       <div class="field">
         <label for="surname">Ваша фамилия</label>
@@ -721,13 +725,12 @@ footer p{
 </section>
 
 <footer>
-  <div class="container">
-    <div class="ph-hero">
-      <div class="f-title">Будем рады<br>видеть вас!</div>
-      <div class="f-names">В ритме единства</div>
-    </div>
-    <img class="logo" src="images/logo.jpg" alt="Nazan Dance" onerror="this.style.display='none'">
-    <p>31 октября 2026 • ДК «Яуза» • Мытищи</p>
+  <div class="ph-hero">
+    <div class="f-title">Будем рады<br>видеть вас!</div>
+    <div class="f-names">В ритме единства</div>
+  </div>
+  <div class="foot-bottom">
+    <img class="logo" src="images/logo.png" alt="Nazan Dance" onerror="this.style.display='none'">
   </div>
 </footer>
 
@@ -797,4 +800,4 @@ form.addEventListener('submit', async (e) => {
 });
 </script>
 </body>
-</html>
+</html>а
