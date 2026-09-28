@@ -622,4 +622,40 @@ form.addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.textContent = 'Отправка…';
 
-  // Собираем данные и кодируем как urlencoded (ка
+  // Собираем данные и кодируем как urlencoded (как ожидает Apps Script в e.parameter)
+  const params = new URLSearchParams();
+  params.append('surname', document.getElementById('surname').value.trim());
+  params.append('name', document.getElementById('name').value.trim());
+  params.append('attend', form.querySelector('input[name="attend"]:checked').value);
+  params.append('with', document.getElementById('with').value.trim());
+
+  if (GOOGLE_SCRIPT_URL.startsWith('ВСТАВЬТЕ')) {
+    msg.className = 'form-msg err';
+    msg.textContent = 'Форма ещё не подключена: вставьте URL Apps Script.';
+    btn.disabled = false;
+    btn.textContent = 'Отправить!';
+    return;
+  }
+
+  try {
+    // Без headers и без no-cors — браузер сам поставит Content-Type
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      body: params
+    });
+
+    msg.className = 'form-msg ok';
+    msg.textContent = 'Спасибо! Ваш ответ сохранён. Ждём вас 31 октября!';
+    form.reset();
+  } catch (err) {
+    console.error('Ошибка отправки:', err);
+    msg.className = 'form-msg err';
+    msg.textContent = 'Ошибка отправки. Попробуйте ещё раз.';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Отправить!';
+});
+</script>
+</body>
+</html>
