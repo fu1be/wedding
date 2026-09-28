@@ -83,22 +83,79 @@ footer p,.cover p,.hero-subtitle{font-family:var(--sans)}
 
 /* ---------- COVER ---------- */
 .cover{
-  position:fixed;inset:0;background:var(--brown);z-index:100;
+  position:fixed;inset:0;z-index:100;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
-  gap:60px;cursor:pointer;transition:opacity .9s ease,visibility .9s;
+  gap:56px;
+  cursor:pointer;
+  transition:opacity .9s ease,visibility .9s;
+  overflow:hidden;
+  /* Фон: тёмный градиент + размытое фото сцены */
+  background:
+    linear-gradient(180deg, rgba(15,10,7,.88) 0%, rgba(20,14,10,.82) 50%, rgba(10,7,5,.95) 100%),
+    url('images/photo1.jpg') center/cover no-repeat,
+    #1a120b;
+}
+/* Виньетка */
+.cover::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at center, transparent 0%, rgba(8,5,3,.55) 70%, rgba(5,3,2,.95) 100%);
+  pointer-events:none;
+  z-index:0;
+}
+/* Тонкий точечный орнамент */
+.cover::after{
+  content:"";
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle, rgba(212,180,131,.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity:.5;
+  pointer-events:none;
+  z-index:0;
 }
 .cover.hidden{opacity:0;visibility:hidden}
+
 .cover p{
-  color:#efe9df;font-size:14px;letter-spacing:.18em;line-height:2;
-  text-transform:uppercase;font-weight:400;text-align:center;
+  position:relative;z-index:2;
+  color:#efe9df;
+  font-size:14px;
+  letter-spacing:.2em;
+  line-height:2;
+  text-transform:uppercase;
+  font-weight:400;
+  text-align:center;
+  text-shadow:0 2px 14px rgba(0,0,0,.7);
 }
-.heart-wrap{
-  width:120px;height:120px;background:var(--white);border-radius:50%;
+
+/* Круг с логотипом */
+.logo-wrap{
+  position:relative;z-index:2;
+  width:150px;height:150px;
+  background:rgba(20,14,10,.6);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  animation:pulse 2.2s ease-in-out infinite;
-  box-shadow:0 10px 40px rgba(0,0,0,.35);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  box-shadow:
+    0 10px 50px rgba(0,0,0,.55),
+    inset 0 0 40px rgba(255,255,255,.04);
+  animation:pulse 2.6s ease-in-out infinite;
 }
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+}
+
+/* Логотип внутри круга */
+.logo-wrap img{
+  width:100px;
+  height:100px;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));
+}
 
 /* ---------- HERO ---------- */
 .hero{
@@ -417,6 +474,11 @@ footer .f-logo{
   .dc-frame{padding:36px 22px}
   .btn{padding:14px 28px;font-size:10px}
   footer .f-logo{width:110px;bottom:36px}
+
+  .cover{gap:44px}
+  .logo-wrap{width:120px;height:120px}
+  .logo-wrap img{width:80px;height:80px}
+  .cover p{font-size:12px;letter-spacing:.18em}
 }
 </style>
 <base target="_blank">
@@ -426,10 +488,8 @@ footer .f-logo{
 <!-- Обложка -->
 <div class="cover" id="cover" role="button" aria-label="Открыть приглашение">
   <p>Нажмите, чтобы открыть<br>приглашение</p>
-  <div class="heart-wrap">
-    <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#241d14" stroke-width="1.3">
-      <path d="M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3.9 4.3 2.4 1-1.5 2.6-2.4 4.3-2.4 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z"/>
-    </svg>
+  <div class="logo-wrap">
+    <img src="images/logo.png" alt="Nazan Dance" onerror="this.style.display='none'">
   </div>
 </div>
 
@@ -518,7 +578,7 @@ footer .f-logo{
     <p class="sub">Наш праздник пройдёт в ДК «Яуза»<br>по адресу: г. Мытищи, ул. Мира, д. 2а</p>
     <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?ll=37.742945%2C55.908601&z=17&pt=37.742945%2C55.908601%2Cpm2rdm" loading="lazy" allowfullscreen></iframe>
     <div class="place-card">
-      <a class="btn" href="https://yandex.ru/maps/?text=%D0%94%D0%9A%20%D0%AF%D1%83%D0%B7%D0%B0%2C%20%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9C%D0%B8%D1%80%D0%B0%202%D0%B0" target="_blank" rel="noopener">Построить маршрут</a>
+      <a class="btn" href="https://yandex.ru/maps/?rtext=~55.908601%2C37.742945" target="_blank" rel="noopener">Построить маршрут</a>
     </div>
   </div>
 </section>
@@ -581,14 +641,11 @@ footer .f-logo{
 </footer>
 
 <script>
-// URL твоего Apps Script
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxT2NnO8WFJ4uVCBak9qzxnLcyre4sXy0o3L5IoB-VrWPUOSNiWqBplDqzV2L94lTs2hg/exec";
 
-// === Обложка ===
 const cover = document.getElementById('cover');
 cover.addEventListener('click', () => cover.classList.add('hidden'));
 
-// === Таймер ===
 const target = new Date('2026-10-31T18:00:00+03:00').getTime();
 const dEl = document.getElementById('d');
 const hEl = document.getElementById('h');
@@ -606,11 +663,9 @@ function tick(){
 tick();
 setInterval(tick, 1000);
 
-// === Появление секций ===
 const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// === Анкета ===
 const form = document.getElementById('rsvpForm');
 const msg = document.getElementById('formMsg');
 const btn = document.getElementById('submitBtn');
@@ -622,7 +677,6 @@ form.addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.textContent = 'Отправка…';
 
-  // Собираем данные как urlencoded (Apps Script читает их через e.parameter)
   const params = new URLSearchParams();
   params.append('surname', document.getElementById('surname').value.trim());
   params.append('name', document.getElementById('name').value.trim());
@@ -633,9 +687,7 @@ form.addEventListener('submit', async (e) => {
     await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
       body: params
-      // Без headers, без no-cors — браузер сам поставит Content-Type: application/x-www-form-urlencoded
     });
-
     msg.className = 'form-msg ok';
     msg.textContent = 'Спасибо! Ваш ответ сохранён. Ждём вас 31 октября!';
     form.reset();
@@ -644,7 +696,6 @@ form.addEventListener('submit', async (e) => {
     msg.className = 'form-msg err';
     msg.textContent = 'Ошибка отправки. Попробуйте ещё раз.';
   }
-
   btn.disabled = false;
   btn.textContent = 'Отправить!';
 });
