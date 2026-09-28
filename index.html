@@ -94,7 +94,8 @@ h2{
 .btn-send,
 .form-msg,
 footer p,
-.cover p {
+.cover p,
+.hero-subtitle {
   font-family: var(--sans);
 }
 
@@ -158,7 +159,6 @@ footer p,
 .hero-top{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   flex:1;
-  gap:clamp(16px,3vh,28px);
   padding-top:20px;
   padding-bottom:20px;
   width:100%;
@@ -166,6 +166,19 @@ footer p,
 .hero .logo{
   width:clamp(130px,32vw,180px);
   filter:drop-shadow(0 8px 30px rgba(0,0,0,.5));
+  margin-bottom:14px;
+}
+.hero-subtitle{
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#e9e2d6;
+  line-height:1.6;
+  text-align:center;
+  margin-bottom:36px;
+  text-shadow:0 2px 8px rgba(0,0,0,.5);
 }
 .hero-title{
   font-weight:400;
@@ -573,8 +586,9 @@ footer .f-logo{
 @media(max-width:520px){
   section{padding:70px 16px}
   .hero{padding:30px 16px 30px}
-  .hero-top{gap:14px;padding-top:10px;padding-bottom:10px}
-  .hero .logo{width:clamp(110px,36vw,140px)}
+  .hero-top{padding-top:10px;padding-bottom:10px}
+  .hero .logo{width:clamp(110px,36vw,140px);margin-bottom:12px}
+  .hero-subtitle{font-size:9px;letter-spacing:.15em;line-height:1.5;margin-bottom:28px}
   .hero-title{font-size:clamp(26px,9vw,40px);letter-spacing:.1em}
   .timer{gap:6px}
   .timer .unit{width:60px;height:60px}
@@ -605,6 +619,7 @@ footer .f-logo{
 <header class="hero">
   <div class="hero-top">
     <img class="logo" src="images/logo.png" alt="Nazan Dance" onerror="this.style.display='none'">
+    <p class="hero-subtitle">Межнациональный<br>танцевальный концерт-спектакль</p>
     <h1 class="hero-title">В ритме <b>единства</b></h1>
   </div>
   <div class="timer">
