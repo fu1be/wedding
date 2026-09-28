@@ -8,8 +8,17 @@
 <link rel="icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* === ПОДКЛЮЧЕНИЕ BEROLD === */
+@font-face {
+  font-family: 'Berold';
+  src: url('fonts/Berold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root{
   --black:#181512;
   --brown:#241d14;
@@ -19,7 +28,7 @@
   --grey:#7d7d7d;
   --line:#e3ded6;
   --sans:'Montserrat',Arial,sans-serif;
-  --serif:'Cormorant Garamond',Georgia,serif;
+  --serif:'Berold',Georgia,serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,7 +46,7 @@ img{max-width:100%;display:block}
 section{padding:100px 24px;text-align:center}
 .container{max-width:880px;margin:0 auto}
 
-/* === ТОЛЬКО ЗАГОЛОВКИ — Cormorant Garamond Regular === */
+/* === ТОЛЬКО ЗАГОЛОВКИ — Berold (вес 400) === */
 h1, h2, h3,
 .hero-title,
 .date-big,
@@ -315,10 +324,12 @@ footer p,
 }
 .g-grid .ph:hover img{transform:scale(1.04)}
 
+/* Фото 1 и 4 — горизонтальные (на всю ширину) */
 .g-grid .ph-wide{
   grid-column:1/-1;
   height:320px;
 }
+/* Фото 2 и 3 — квадратные */
 .g-grid .ph-square{
   height:280px;
 }
