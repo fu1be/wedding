@@ -10,10 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* === ПОДКЛЮЧЕНИЕ BEROLD === */
+/* === ПОДКЛЮЧЕНИЕ MAK === */
 @font-face {
-  font-family: 'Berold';
-  src: url('fonts/Berold.ttf') format('truetype');
+  font-family: 'Mak';
+  src: url('fonts/Mak.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@
   --grey:#7d7d7d;
   --line:#e3ded6;
   --sans:'Montserrat',Arial,sans-serif;
-  --serif:'Berold',Georgia,serif;
+  --serif:'Mak',Georgia,serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -46,7 +46,7 @@ img{max-width:100%;display:block}
 section{padding:100px 24px;text-align:center}
 .container{max-width:880px;margin:0 auto}
 
-/* === ТОЛЬКО ЗАГОЛОВКИ — Berold (вес 400) === */
+/* === ТОЛЬКО ЗАГОЛОВКИ — Mak (вес 400) === */
 h1, h2, h3,
 .hero-title,
 .date-big,
@@ -324,12 +324,10 @@ footer p,
 }
 .g-grid .ph:hover img{transform:scale(1.04)}
 
-/* Фото 1 и 4 — горизонтальные (на всю ширину) */
 .g-grid .ph-wide{
   grid-column:1/-1;
   height:320px;
 }
-/* Фото 2 и 3 — квадратные */
 .g-grid .ph-square{
   height:280px;
 }
@@ -417,17 +415,18 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
 }
 .field input[type=text]:focus{border-color:var(--black)}
 
-/* Радио-кнопки — нормальные видимые квадраты */
+/* Радио-кнопки — ровные, с выровненным текстом */
 .radio-row{
   font-family:var(--sans);
   display:flex;
   align-items:center;
-  gap:14px;
-  margin-bottom:14px;
+  gap:12px;
+  margin-bottom:16px;
   cursor:pointer;
   font-size:16px;
-  line-height:1.5;
+  line-height:1.4;
   position:relative;
+  padding:2px 0;
 }
 .radio-row input[type="radio"]{
   position:absolute;
@@ -445,7 +444,9 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   position:relative;
   transition:.25s;
   background:transparent;
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
 .radio-row input:checked + .box{
   background:var(--red);
@@ -463,6 +464,11 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
   transform:rotate(45deg);
 }
 .radio-row input:checked ~ .txt{color:var(--white)}
+.radio-row .txt{
+  display:inline-block;
+  line-height:1.4;
+  transform:translateY(-1px);
+}
 
 .submit-wrap{text-align:center;margin-top:10px}
 .btn-send{
