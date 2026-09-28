@@ -581,7 +581,7 @@ footer .f-logo{
 </footer>
 
 <script>
-// ⚠️ ВСТАВЬ СЮДА СВОЙ URL ИЗ APPS SCRIPT
+// URL твоего Apps Script
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxT2NnO8WFJ4uVCBak9qzxnLcyre4sXy0o3L5IoB-VrWPUOSNiWqBplDqzV2L94lTs2hg/exec";
 
 // === Обложка ===
@@ -622,26 +622,18 @@ form.addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.textContent = 'Отправка…';
 
-  // Собираем данные и кодируем как urlencoded (как ожидает Apps Script в e.parameter)
+  // Собираем данные как urlencoded (Apps Script читает их через e.parameter)
   const params = new URLSearchParams();
   params.append('surname', document.getElementById('surname').value.trim());
   params.append('name', document.getElementById('name').value.trim());
   params.append('attend', form.querySelector('input[name="attend"]:checked').value);
   params.append('with', document.getElementById('with').value.trim());
 
-  if (GOOGLE_SCRIPT_URL.startsWith('https://script.google.com/macros/s/AKfycbxT2NnO8WFJ4uVCBak9qzxnLcyre4sXy0o3L5IoB-VrWPUOSNiWqBplDqzV2L94lTs2hg/exec')) {
-    msg.className = 'form-msg err';
-    msg.textContent = 'Форма ещё не подключена: вставьте URL Apps Script.';
-    btn.disabled = false;
-    btn.textContent = 'Отправить!';
-    return;
-  }
-
   try {
-    // Без headers и без no-cors — браузер сам поставит Content-Type
     await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
       body: params
+      // Без headers, без no-cors — браузер сам поставит Content-Type: application/x-www-form-urlencoded
     });
 
     msg.className = 'form-msg ok';
