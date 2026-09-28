@@ -8,7 +8,7 @@
 <link rel="icon" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --black:#181512;
@@ -37,7 +37,7 @@ img{max-width:100%;display:block}
 section{padding:100px 24px;text-align:center}
 .container{max-width:880px;margin:0 auto}
 
-/* === ТОЛЬКО ЗАГОЛОВКИ — Cormorant Garamond SemiBold === */
+/* === ТОЛЬКО ЗАГОЛОВКИ — Cormorant Garamond Regular === */
 h1, h2, h3,
 .hero-title,
 .date-big,
@@ -46,7 +46,7 @@ h1, h2, h3,
 .p-item .time,
 .place-card h3 {
   font-family: var(--serif);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 h2{
@@ -155,14 +155,14 @@ footer p,
   box-shadow:0 8px 30px rgba(0,0,0,.3);
 }
 .hero-title{
-  font-weight:600;
+  font-weight:400;
   font-size:clamp(36px,8vw,68px);
   letter-spacing:.12em;
   text-transform:uppercase;
   text-align:center;
   line-height:1.15;
 }
-.hero-title b{font-weight:600;font-style:normal}
+.hero-title b{font-weight:400;font-style:normal}
 
 /* Таймер — компактный, строго снизу */
 .timer{
@@ -209,7 +209,7 @@ footer p,
 .invite-text .hello{
   display:block;
   font-family:var(--serif);
-  font-weight:600;
+  font-weight:400;
   font-size:clamp(24px,4.5vw,32px);
   letter-spacing:.06em;
   margin-bottom:18px;
@@ -217,7 +217,7 @@ footer p,
 }
 .date-big{
   font-size:clamp(30px,5.5vw,42px);
-  font-weight:600;
+  font-weight:400;
   margin:48px 0 32px;
   letter-spacing:.08em;
 }
@@ -234,7 +234,7 @@ footer p,
   letter-spacing:.3em;
   text-transform:uppercase;
   margin-bottom:18px;
-  font-weight:600;
+  font-weight:400;
 }
 .cal-grid{
   display:grid;
@@ -274,13 +274,13 @@ footer p,
 .p-item{max-width:500px;margin:48px auto 0}
 .p-item .time{
   font-size:30px;
-  font-weight:600;
+  font-weight:400;
   letter-spacing:.1em;
 }
 .p-item h3{
   font-family:var(--serif);
   font-size:24px;
-  font-weight:600;
+  font-weight:400;
   margin:8px 0 10px;
   letter-spacing:.06em;
 }
@@ -315,12 +315,10 @@ footer p,
 }
 .g-grid .ph:hover img{transform:scale(1.04)}
 
-/* Фото 1 и 4 — горизонтальные (на всю ширину) */
 .g-grid .ph-wide{
   grid-column:1/-1;
   height:320px;
 }
-/* Фото 2 и 3 — квадратные */
 .g-grid .ph-square{
   height:280px;
 }
@@ -341,7 +339,7 @@ footer p,
 .place-card h3{
   font-family:var(--serif);
   font-size:30px;
-  font-weight:600;
+  font-weight:400;
   letter-spacing:.06em;
 }
 .place-card .addr{
@@ -408,38 +406,52 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
 }
 .field input[type=text]:focus{border-color:var(--black)}
 
-/* Радио-кнопки — нормальные квадраты */
+/* Радио-кнопки — нормальные видимые квадраты */
 .radio-row{
   font-family:var(--sans);
-  display:flex;align-items:center;gap:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
   margin-bottom:14px;
   cursor:pointer;
   font-size:16px;
   line-height:1.5;
+  position:relative;
 }
-.radio-row input{position:absolute;opacity:0}
+.radio-row input[type="radio"]{
+  position:absolute;
+  opacity:0;
+  width:0;
+  height:0;
+  pointer-events:none;
+}
 .radio-row .box{
-  width:22px;height:22px;
+  width:22px;
+  height:22px;
   border:1.5px solid #f3ede3;
   border-radius:2px;
   flex:none;
   position:relative;
   transition:.25s;
+  background:transparent;
+  display:inline-block;
 }
-.radio-row input:checked+.box{
+.radio-row input:checked + .box{
   background:var(--red);
   border-color:var(--red);
 }
-.radio-row input:checked+.box::after{
+.radio-row input:checked + .box::after{
   content:"";
   position:absolute;
-  left:6px;top:2px;
-  width:6px;height:11px;
+  left:6px;
+  top:2px;
+  width:6px;
+  height:11px;
   border:solid #fff;
   border-width:0 2px 2px 0;
   transform:rotate(45deg);
 }
-.radio-row input:checked~.txt{color:var(--white)}
+.radio-row input:checked ~ .txt{color:var(--white)}
 
 .submit-wrap{text-align:center;margin-top:10px}
 .btn-send{
@@ -491,7 +503,7 @@ footer .ph-hero>*{position:relative;z-index:1}
 footer .f-title{
   font-family:var(--serif);
   font-size:clamp(28px,5.5vw,42px);
-  font-weight:600;
+  font-weight:400;
   letter-spacing:.12em;
   text-transform:uppercase;
   text-shadow:0 2px 18px rgba(0,0,0,.6);
@@ -668,8 +680,16 @@ footer p{
       </div>
       <div class="field">
         <label>Сможете ли вы присутствовать?</label>
-        <label class="radio-row"><input type="radio" name="attend" value="yes" required><span class="box"></span><span class="txt">Да, конечно</span></label>
-        <label class="radio-row"><input type="radio" name="attend" value="no"><span class="box"></span><span class="txt">Нет, к сожалению</span></label>
+        <label class="radio-row">
+          <input type="radio" name="attend" value="yes" required>
+          <span class="box"></span>
+          <span class="txt">Да, конечно</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="attend" value="no">
+          <span class="box"></span>
+          <span class="txt">Нет, к сожалению</span>
+        </label>
       </div>
       <div class="field">
         <label for="with">С кем планируете посетить мероприятие? <span style="color:#9a938a">(необязательно)</span></label>
