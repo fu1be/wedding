@@ -140,11 +140,14 @@ footer p,
 /* ---------- HERO ---------- */
 .hero{
   min-height:100vh;
+  min-height:100svh;
+  min-height:100dvh;
   position:relative;
   display:flex;flex-direction:column;justify-content:space-between;align-items:center;
   padding:40px 20px 40px;
   color:var(--white);
   background:url('images/photo1.jpg') center/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
+  overflow:hidden;
 }
 .hero::before{
   content:"";
@@ -153,36 +156,40 @@ footer p,
 }
 .hero>*{position:relative;z-index:1}
 .hero-top{
-  display:flex;flex-direction:column;align-items:center;
-  flex:1;justify-content:flex-end;
-  padding-bottom:40px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex:1;
+  gap:clamp(16px,3vh,28px);
+  padding-top:20px;
+  padding-bottom:20px;
+  width:100%;
 }
 .hero .logo{
-  width:180px;
-  margin-bottom:28px;
+  width:clamp(130px,32vw,180px);
   filter:drop-shadow(0 8px 30px rgba(0,0,0,.5));
 }
 .hero-title{
   font-weight:400;
-  font-size:clamp(36px,8vw,68px);
+  font-size:clamp(30px,8vw,68px);
   letter-spacing:.12em;
   text-transform:uppercase;
   text-align:center;
   line-height:1.15;
+  word-break:break-word;
 }
 .hero-title b{font-weight:400;font-style:normal}
 
 /* Таймер — компактный, строго снизу */
 .timer{
   display:flex;
-  gap:clamp(10px,2.5vw,22px);
-  margin-top:0;
+  gap:clamp(8px,2vw,22px);
   flex-wrap:wrap;
   justify-content:center;
+  width:100%;
   padding-bottom:10px;
 }
 .timer .unit{
-  width:78px;height:78px;
+  width:clamp(62px,16vw,78px);
+  height:clamp(62px,16vw,78px);
   border:1px solid rgba(255,255,255,.75);
   border-radius:50%;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
@@ -191,7 +198,7 @@ footer p,
 }
 .timer .num{
   font-family:var(--sans);
-  font-size:24px;
+  font-size:clamp(18px,5vw,24px);
   font-weight:400;
   line-height:1;
   letter-spacing:.04em;
@@ -512,10 +519,13 @@ footer{
 footer .ph-hero{
   background:url('images/photo5.jpg') center 30%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
   min-height:100vh;
+  min-height:100svh;
+  min-height:100dvh;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   gap:16px;
   position:relative;
   padding:60px 20px;
+  overflow:hidden;
 }
 footer .ph-hero::before{
   content:"";
@@ -562,13 +572,18 @@ footer .f-logo{
 /* ---------- MOBILE ---------- */
 @media(max-width:520px){
   section{padding:70px 16px}
-  .timer .unit{width:70px;height:70px}
-  .timer .num{font-size:22px}
+  .hero{padding:30px 16px 30px}
+  .hero-top{gap:14px;padding-top:10px;padding-bottom:10px}
+  .hero .logo{width:clamp(110px,36vw,140px)}
+  .hero-title{font-size:clamp(26px,9vw,40px);letter-spacing:.1em}
+  .timer{gap:6px}
+  .timer .unit{width:60px;height:60px}
+  .timer .num{font-size:17px}
+  .timer .lbl{font-size:7px;letter-spacing:.22em}
   .h-decor::before,.h-decor::after{display:none}
   .calendar{padding:20px 22px}
   .dc-frame{padding:36px 22px}
   .btn{padding:14px 28px;font-size:10px}
-  .hero .logo{width:130px}
   footer .f-logo{width:110px;bottom:36px}
 }
 </style>
