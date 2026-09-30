@@ -91,7 +91,7 @@ footer p,.cover p,.hero-subtitle{font-family:var(--sans)}
   overflow:hidden;
   background:
     linear-gradient(180deg, rgba(15,10,7,.88) 0%, rgba(20,14,10,.82) 50%, rgba(10,7,5,.95) 100%),
-    url('images/photo6.jpg') center/cover no-repeat,
+    url('images/photo6.JPG') center/cover no-repeat,
     #1a120b;
 }
 .cover::before{
@@ -157,7 +157,7 @@ footer p,.cover p,.hero-subtitle{font-family:var(--sans)}
   justify-content:space-between;align-items:center;
   padding:34px 24px 38px;
   color:var(--white);
-  background:url('images/photo6.jpg') center 20%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
+  background:url('images/photo6.JPG') center 20%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
   overflow:hidden;
 }
 .hero::before{
@@ -175,12 +175,15 @@ footer p,.cover p,.hero-subtitle{font-family:var(--sans)}
   animation:fadeDown 1.1s ease .2s forwards;
 }
 
+/* hero-center теперь прижат к низу, надписи сидят над таймером */
 .hero-center{
   flex:1;
   display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  width:100%;gap:clamp(20px,3.5vh,32px);
-  padding:20px 0;
+  justify-content:flex-end;
+  align-items:center;
+  width:100%;
+  gap:clamp(20px,3.5vh,32px);
+  padding:20px 0 60px;
 }
 
 .hero-subtitle{
@@ -407,7 +410,7 @@ form{max-width:580px;margin:40px auto 0;text-align:left}
 /* ---------- FOOTER ---------- */
 footer{background:var(--black);color:var(--white);text-align:center;margin:0;padding:0}
 footer .ph-hero{
-  background:url('images/photo5.jpg') center 30%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
+  background:url('images/photo7.jpg') center 30%/cover no-repeat, linear-gradient(135deg,#241d14,#181512);
   min-height:100vh;
   min-height:100svh;
   min-height:100dvh;
@@ -452,7 +455,7 @@ footer .f-logo{
   section{padding:70px 16px}
   .hero{padding:24px 16px 30px}
   .hero-logo{width:90px}
-  .hero-center{gap:18px;padding:16px 0}
+  .hero-center{gap:18px;padding:16px 0 40px}
   .hero-subtitle{font-size:9px;letter-spacing:.22em}
   .hero-title{font-size:clamp(34px,11vw,46px);letter-spacing:.08em}
   .timer{gap:6px}
